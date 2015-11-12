@@ -36,6 +36,13 @@ namespace PollosMario.Web.Controllers
             return View(pedido);
         }
 
+        public ActionResult Reporte()
+        {
+            
+            var pedido = db.Pedidos.Include(p => p.Persona).ToList();
+            return View(pedido);
+        }
+
         // GET: Pedidos/Create
         public ActionResult Create()
         {
